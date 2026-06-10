@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-store" />
+    <title>Snake</title>
+    <link rel="stylesheet" href="style.css?v=4" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <section class="play-area" aria-label="Snake game">
+        <div id="gameCanvas" class="game-canvas" tabindex="0"></div>
+        <div id="gameMessage" class="game-message" role="status" aria-live="polite" hidden>
+          <strong id="gameMessageTitle">Game Over</strong>
+          <span id="gameMessageText" hidden></span>
+        </div>
+      </section>
+
+      <aside class="gui" aria-label="Game controls">
+        <div class="score-grid">
+          <div class="score-item">
+            <span class="score-label">Best Score</span>
+            <strong id="bestScore">0</strong>
+          </div>
+          <div class="score-item">
+            <span class="score-label">Current Score</span>
+            <strong id="currentScore">0</strong>
+          </div>
+        </div>
+
+        <fieldset class="mode-list" id="modeList">
+          <legend>Game Mode</legend>
+          <label><input type="radio" name="mode" value="classic" checked /> Classic</label>
+          <label><input type="radio" name="mode" value="god" /> God mode</label>
+          <label><input type="radio" name="mode" value="walls" /> Walls</label>
+          <label><input type="radio" name="mode" value="portal" /> Portal</label>
+          <label><input type="radio" name="mode" value="speed" /> Speed</label>
+        </fieldset>
+
+        <div id="statusText" class="status-text">Ready</div>
+
+        <div class="button-row">
+          <button id="playButton" type="button">Play</button>
+          <button id="exitButton" type="button">Exit</button>
+          <button id="menuButton" type="button" hidden>Menu</button>
+        </div>
+      </aside>
+    </main>
+
+    <script src="https://pixijs.download/v7.4.0/pixi-legacy.min.js"></script>
+    <script type="module" src="src/main.js?v=7"></script>
+  </body>
+</html>
